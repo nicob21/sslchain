@@ -1,4 +1,4 @@
-![Logo](https://github.com/nicob21/sslchain/blob/master/sslchain_site/app/img/logo.png) # Sslchain
+# ![Logo](https://github.com/nicob21/sslchain/blob/master/sslchain_site/app/img/logo.png) Sslchain
 
 ## Introduction
 A large amount of data are exchanged on the Internet everyday. These data might be confidential (credit card numbers for example) and their transfer must be secure.
