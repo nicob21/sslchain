@@ -1,7 +1,7 @@
 # ![Logo](https://github.com/nicob21/sslchain/blob/master/sslchain_site/app/img/logo.png) Sslchain
 
 ## What is Sslchain?
-Sslchain is a new way to manage SSL certificates without requiring a certification authority. It uses Ethereum blockchain to get a secure, decentralized and public way to store SSL certificates.
+Sslchain is a new way to manage SSL certificates without requiring a certification authority. It uses Ethereum blockchain to get a secure, decentralized and public way to store SSL certificates. Please find the one-pager that sum-up the project in the repository.
 
 ## How does it work?
 Sslchain uses Ethereum blockchain and web3 API to interact with Ethereum. Sslchain owns  a smart-contract *cf Sslchain.sol* composed of a structure to store the certificates and a function to add new ones.
@@ -71,8 +71,6 @@ Run the command:
 ```
 If you previously add your certificate for your domain name, the program will get its certificate and check if the one you entered in the blockchain is equal. 
 
-## Other resources
-Please find a one-pager that sum-up the project : *one-pager.pdf*.
 For more informations, you can also read *sslchain.pdf*.
 
 ## Contact
