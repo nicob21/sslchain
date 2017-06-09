@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Sslchain</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="app/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="app/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="app/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- Plugin CSS -->
+    <link href="app/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link href="app/css/creative.min.css" rel="stylesheet">
+    <link href="app/style.css" rel="stylesheet">
+    <!-- Script sslchain -->
+    <script src="app/javascripts/sslchain.js"></script>
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <img src="app/img/logo.png">
+                <a class="navbar-brand page-scroll" href="#page-top">SSLCHAIN</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">Script</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Infos</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#newCertificate">Create a Certificat</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#apercu">Overview</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 id="homeHeading">What is Sslchain?</h1>
+                <hr>
+                <p>Sslchain is a solution using blockchain technology to ensure a SSL certificate validity without trusting a certification authority (CA).</p>
+                <p>Currently, SSL certificates are signed by CA which a trusted. Sslchain propose a new way to manage the certificates taking advantage of the blockchain technology</p>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Learn More</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Discover Sslchain verification program</h2>
+                    <hr class="light">
+                    <p class="text-faded">This NodeJs script can verifiy the certificate send by the server. It connects to the blockchain to checkout that the certificate is stored. The data exchange can be encrypted using SSL protocol.</p>
+                    <!--<a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Télécharger</a>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Sslchain stores the certificates</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-lock text-primary sr-icons"></i>
+                        <h3>Safely</h3>
+                        <p class="text-muted">Certificates are encrypted</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
+                        <h3>Public</h3>
+                        <p class="text-muted">Everyone can consult the certificates stored in the blockchain</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-cloud text-primary sr-icons"></i>
+                        <h3>Decentralized</h3>
+                        <p class="text-muted">The information is stored on many computers around the world</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-certificate text-primary sr-icons"></i>
+                        <h3>Unforgeable</h3>
+                        <p class="text-muted">An information stored in the blockchain can not be modified</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="newCertificate" class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Create a certificate</h2
+                    <p>In order to store your certificate in the blockchain, please execute the following command:</p>
+                    <pre># openssl req -new -newkey rsa:2048 -nodes -keyout &lt;my_domain&gt;.key -out &lt;my_domain&gt;.csr</pre>
+                    <p>Then self-sign the file <code>.csr</code> with your private key as follow.</p>
+                    <pre># openssl x509 -req -days 365 -in &lt;my_domain&gt;.csr -signkey &lt;my_domain&gt;.key -out &lt;my_domain&gt;.crt</pre>
+                    <p>Please fulfill this form to add your certificate to the blockchain.</p>
+                    <form id="create_certificate" onsubmit="createCertificate()">
+                        <input type="text" id="domain" placeholder="Your domain name"><br>
+                        <textarea id="code_certificat" rows="10" cols="50" placeholder="Copy your .crt here (Tags -----BEGIN CERTIFICATE----- and -----END CERTIFICATE----- excluded)"></textarea><br>
+                        <input type="submit" value="Create" class="btn btn-default btn-xl sr-button">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="apercu" class="bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Overview of the last certificates added in Sslchain</h2>
+                    <div class="cert">
+                        <h3 id="cert_dom0"></h3>
+                        <p id="cert_date0"></p>
+                        <p id="cert_code0"></p>
+                    </div>
+                    <div class="cert">
+                        <h3 id="cert_dom1"></h3>
+                        <p id="cert_date1"></p>
+                        <p id="cert_code1"></p>
+                    </div>
+                    <div class="cert">
+                        <h3 id="cert_dom2"></h3>
+                        <p id="cert_date2"></p>
+                        <p id="cert_code2"></p>
+                    </div>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Contact</h2>
+                    <hr class="primary">
+                    <p>You have some questions or you simply want to contact me?</p>
+                </div>
+                <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <i class="fa fa-phone fa-3x sr-contact"></i>
+                    <p>+33 661427138</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                    <p>nico.bernard21@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="app/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="app/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="app/vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src=app/"vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="app/js/creative.min.js"></script>
+
+    <script> getCertificates(); </script>
+</body>
+
+</html>

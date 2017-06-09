@@ -1,0 +1,63 @@
+.navbar-header img {
+    max-width: 40px;
+
+}
+.navbar-header>a {
+    float: left;
+    display: inline-block;
+}
+
+.logo {
+    width: 40px;
+    text-align: center;
+}
+
+.container>h1 {
+    text-align: center;
+}
+
+#sslchain_img {
+    width: 40px;
+    max-width: 40px;
+}
+
+#certificates th {
+    text-align: center;
+}
+
+.cert {
+    border: 1px solid silver;
+    width: 300px;
+    float: left;
+    margin: 70px 30px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cert h3 {
+    border-bottom: 1px solid silver;
+    padding-bottom: 15px;
+}
+
+.cert p {
+    overflow: hidden;
+}
+
+#create_certificate input{
+    margin-top: 10px;
+}
+
+input, textarea, select {
+ padding:3px;
+ border:1px solid #F5C5C5;
+ border-radius:5px;
+ width:400px;
+ box-shadow:1px 1px 2px #C0C0C0 inset;
+ }
+ #create_certificate>input{
+     margin-bottom: 20px;
+     color: black;
+ }
+ #create_certificate>textarea{
+     color: black;
+ }
