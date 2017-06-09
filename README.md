@@ -1,4 +1,4 @@
-[[https://github.com/nicob21/sslchain/tree/master/sslchain_site/app/img/logo.png]]
+![Logo](https://github.com/nicob21/sslchain/blob/master/sslchain_site/app/img/logo.png)
 
 # Sslchain
 
