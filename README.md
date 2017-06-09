@@ -71,7 +71,7 @@ Run the command:
 ```
 If you previously add your certificate for your domain name, the program will get its certificate and check if the one you entered in the blockchain is equal. 
 
-For more informations, you can also read *sslchain.pdf*.
+For more informations, you can also read [sslchain.pdf](https://github.com/nicob21/sslchain/blob/master/sslchain.pdf)
 
 ## Contact
 To contact me : nico.bernard21@gmail.com
