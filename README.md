@@ -1,8 +1,9 @@
-[logo]: https://github.com/nicob21/sslchain/tree/master/sslchain_site/app/img/logo.png "Sslchain logo"
+![alt text](https://github.com/nicob21/sslchain/tree/master/sslchain_site/app/img/logo.png)
 
-Sslchain - Nicolas BERNARD - 24th of April 2017
+# Sslchain
+Nicolas BERNARD - 24th of April 2017
 
-# Introduction
+## Introduction
 A large amount of data are exchanged on the Internet everyday. These data might be confidential (credit card numbers for example) and their transfer must be secure.
 \newline \newline
 So, the majority of the websites use SSL certificates to authenticate themselves to their clients and exchange encrypted data. We are going to analyse in this document how Sslchain allows us to manage certificates using a blockchain.
