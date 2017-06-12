@@ -4,13 +4,13 @@
 Sslchain is a new way to manage SSL certificates without requiring a certification authority. It uses Ethereum blockchain to get a secure, decentralized and public way to store SSL certificates. Please find the one-pager that sum-up the project in the repository.
 
 ## How does it work?
-Sslchain uses Ethereum blockchain and web3 API to interact with Ethereum. Sslchain owns  a smart-contract *cf Sslchain.sol* composed of a structure to store the certificates and a function to add new ones.
+Sslchain uses Ethereum blockchain and web3 API to interact with Ethereum. Sslchain owns  a smart-contract (*cf Sslchain.sol*) composed of a structure to store the certificates and a function to add new ones.
 
-To create a SSL certificate, a webmaster needs to generate it using a tool such as *openssl*. He has to provide his personal details and then the program generate the certificate and the private/public key couple. Then he self-signs the certificate using his private key and go on Sslchain website. He can add his certificate in the blockchain throw Sslchain website. 
+To create a SSL certificate, a webmaster needs to generate it using a tool such as *openssl*. He has to provide his personal details and then the program generates the certificate and the private/public key couple. Then he self-signs the certificate using his private key and goes on Sslchain website. He can add his certificate in the blockchain throw Sslchain website. 
 
-These informations are stored in the blockchain using the smart-contract deployed on Ethereum. The smart-contract first check that there are no other certificate for the same domain name or that they expired. So, for one domain name, there is only one valid certificate in the blockchain. The webmaster can then configure his server to send the certificate to the clients.
+These informations are stored in the blockchain using the smart-contract deployed on Ethereum. The smart-contract first checks that there are no other certificate for the same domain name or that they expired. So, for one domain name, there is only one valid certificate in the blockchain. The webmaster can then configure his server to send the certificate to the clients.
 
-In order to verify that a certificate sent by a server is valid, Sslchain has a *NodeJs* script (in the future this script will be automatically executed by the web browser). This program compares the certificate received from the server and the one present in the blockchain for the same domain name. If they match, the certificate is validated and the encrypted exchanges can go on.
+In order to verify that a certificate sent by a server is valid, Sslchain has a *NodeJs* script (in the future this script will be automatically executed by the web browser). This program compares the certificate received from the server and the one present in the blockchain for the same domain name. If they match, the certificate is validated and the encrypted exchanges can start.
 
 ## Requested tools
 *NB: All the following commands have been tested on Ubuntu 16.04 using Google Chrome only.*
@@ -59,9 +59,9 @@ Unlock your Ethereum account:
     web3.personal.unlockAccount(<address>, <password>, 15000)
 ```
 and be sure you got some Ethers (on *test-net* you can get free Ethers: [http://faucet.ropsten.be:3001/](http://faucet.ropsten.be:3001/)).
-Then in the repository *sslchain\_site*, execute the command *npm run dev* and go to [http://localhost:8080](http://localhost:8080) to access Sslchain website. In the menu *Create a certificate* you can fulfill the form to save your certificate in the blockchain. Once your certificate will be mined, it will appear in *Overview* section.
+Then in the repository *sslchain\_site*, execute the command *npm run dev* and go to [http://localhost:8080](http://localhost:8080) to access Sslchain website. In the menu *Create a certificate* you can fulfill the form to save your certificate in the blockchain. Once your certificate is mined, it will appear in *Overview* section.
 
-*NB: Adding a certificate to the blockchain might take few minutes.*
+*NB: Adding a certificate to the blockchain might take a few minutes.*
 
 ### Verify a certificate
 
