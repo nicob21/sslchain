@@ -56,7 +56,7 @@ First start the connexion to the blockchain:
 ### Create a certificate
 Unlock your Ethereum account:
 ```
-    web3.personal.unlockAccount(<address>, <password>, 15000)
+    # web3.personal.unlockAccount(<address>, <password>, 15000)
 ```
 and be sure you got some Ethers (on *test-net* you can get free Ethers: [http://faucet.ropsten.be:3001/](http://faucet.ropsten.be:3001/)).
 Then in the repository *sslchain\_site*, execute the command *npm run dev* and go to [http://localhost:8080](http://localhost:8080) to access Sslchain website. In the menu *Create a certificate* you can fulfill the form to save your certificate in the blockchain. Once your certificate is mined, it will appear in *Overview* section.
