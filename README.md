@@ -1,4 +1,4 @@
-# ![Logo](https://github.com/nicob21/sslchain/blob/master/sslchain_site/app/img/logo.png) Sslchain
+# ![Logo](https://github.com/nicob21/sslchain/blob/master/sslchain_site/img/logo.png) Sslchain
 
 ## What is Sslchain?
 Sslchain is a new way to manage SSL certificates without requiring a certification authority. It uses Ethereum blockchain to get a secure, decentralized and public way to store SSL certificates. Please find the one-pager that sum-up the project in the repository.
@@ -29,6 +29,14 @@ To use the verification script, go into *sslchain_script* and install its depend
     # sudo npm install
 ```
 
+### Setup your Kovan account
+In *sslchain_site/js/app.js*, setup your Kovan account and the private key associated.
+Then run :
+```
+	# sudo browserify app.js -o sslchain.js
+```
+*NB: After every modification in app.js you need to run the browserify command in order to include the NodeJs modules.*
+
 ## Try Sslchain
 
 
@@ -47,3 +55,4 @@ For more informations, you can also read [sslchain.pdf](https://github.com/nicob
 
 ## Contact
 To contact me : nico.bernard21@gmail.com
+Or visit my online resume : [https://nbchain.fr](https://nbchain.fr)
