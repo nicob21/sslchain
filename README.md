@@ -16,56 +16,28 @@ In order to verify that a certificate sent by a server is valid, Sslchain has a 
 *NB: All the following commands have been tested on Ubuntu 16.04 using Google Chrome only.*
 
 ### Ethereum connexion
-In order to install all the components required to connect Ethereum blockchain, please execute the following commands.
-```
-    # sudo apt-get install software-properties-common
-    # sudo add-apt-repository -y ppa:ethereum/ethereum
-    # sudo apt-get update
-    # sudo apt-get install ethereum
-```
-
-You can now connect Ethereum test blockchain called *test-net* using the command:
-```
-    # geth --testnet --fast --rpc --rpcapi db,eth,net,web3,personal --cache=1024
-    --rpcport 8545 --rpcaddr 127.0.0.1 --rpccorsdomain "*" console
-```
-*NB: The synchronisation with Ethereum might take a long time and need to be done.*
+Sslchain uses Kovan test-net Ethereum blockchain. In order to interact with Kovan, we use Infura provider so we don't need to run a node.
 
 ### NodeJs module
-To run the website and create certificates, go to *sslchain_site* repertory and install the following modules:
+To run the website and create certificates, go to *sslchain_site* repertory and launch the following command to automatically install NodeJS dependencies.
 ```
-    # sudo npm install web3
-    # sudo npm install truffle
-    # sudo npm install webpack
-    # sudo npm install copy-webpack-plugin
+    # sudo npm install
 ```
 
-To use the verification script, go into *sslchain_script* and install these modules:
+To use the verification script, go into *sslchain_script* and install its dependencies.
 ```
-    # sudo npm install web3
-    # sudo npm install openssl-cert-tools
+    # sudo npm install
 ```
 
 ## Try Sslchain
-First start the connexion to the blockchain:
-```
-    # geth --testnet --fast --rpc --rpcapi db,eth,net,web3,personal --cache=1024
-    --rpcport 8545 --rpcaddr 127.0.0.1 --rpccorsdomain "*" console
-```
+
 
 ### Create a certificate
-Unlock your Ethereum account:
-```
-    # web3.personal.unlockAccount(<address>, <password>, 15000)
-```
-and be sure you got some Ethers (on *test-net* you can get free Ethers: [http://faucet.ropsten.be:3001/](http://faucet.ropsten.be:3001/)).
-Then in the repository *sslchain\_site*, execute the command *npm run dev* and go to [http://localhost:8080](http://localhost:8080) to access Sslchain website. In the menu *Create a certificate* you can fulfill the form to save your certificate in the blockchain. Once your certificate is mined, it will appear in *Overview* section.
+In the repository *sslchain\_site*, click on index.html to enjoy the web interface localy. In the menu *Create a certificate* you can fulfill the form to save your certificate in the blockchain. Once your certificate is mined, you can ask for it in *Overview* section.
 
-*NB: Adding a certificate to the blockchain might take a few minutes.*
 
 ### Verify a certificate
-
-Run the command:
+In the repository *sslchain\_script*, run the command:
 ```
     # node sslchain.js my_domain_name.com
 ```

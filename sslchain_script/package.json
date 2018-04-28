@@ -1,0 +1,9 @@
+{
+  "name": "sslchain_script",
+  "version": "0.0.1",
+  "author": "Nicolas Bernard",
+  "dependencies": {
+    "web3": "^0.18.2",
+    "openssl-cert-tools": "^1.2.1"
+  }
+}

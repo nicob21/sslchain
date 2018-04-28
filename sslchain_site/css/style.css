@@ -1,0 +1,83 @@
+#contact a{
+    color: black;
+    underline: none;
+}
+.navbar-header img {
+    max-width: 40px;
+
+}
+.navbar-header>a {
+    float: left;
+    display: inline-block;
+}
+
+.logo {
+    width: 40px;
+    text-align: center;
+}
+
+.container>h1 {
+    text-align: center;
+}
+
+#sslchain_img {
+    width: 40px;
+    max-width: 40px;
+}
+
+#certificates th {
+    text-align: center;
+}
+
+.cert {
+    border: 1px solid silver;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cert h3 {
+    border-bottom: 1px solid silver;
+    padding-bottom: 15px;
+}
+
+.cert p {
+    overflow-x: scroll;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+/*#cert0, #cert1 {
+    margin: auto;
+}*/
+
+#create_certificate input{
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+    input, textarea, select {
+        width:400px;
+    }
+}
+
+input, textarea, select {
+    padding:3px;
+    border:1px solid #F5C5C5;
+    border-radius:5px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+    width: 95%;
+ }
+ #create_certificate>input{
+     margin-bottom: 20px;
+     color: black;
+ }
+ #create_certificate>textarea{
+     color: black;
+ }
+ #request_certificate{
+     color: black;
+     margin: 30px auto;
+ }
+#request_certificate>input{
+    max-width: 400px;
+}
