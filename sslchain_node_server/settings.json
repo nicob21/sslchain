@@ -1,0 +1,6 @@
+{
+	"account": "0x0070AEE2aC1f839Db54F2a4c404649c014df87B9",
+	"pkey": "435ece623ccb83986a34940436c7996ac3dfc3f2c1a1a28c10dd074566eedf46",
+	"address": "0x9031669dD6D8Bb3159071bc0142527e696C849b4",
+	"interface": [ { "constant": true, "inputs": [ { "name": "", "type": "bytes32" } ], "name": "certificates", "outputs": [ { "name": "validity_date", "type": "uint256" }, { "name": "cert", "type": "string" }, { "name": "flag", "type": "uint8" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "dom", "type": "bytes32" }, { "name": "date", "type": "uint256" }, { "name": "cert", "type": "string" } ], "name": "newCertificate", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "numCertificate", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" } ]
+}	 			 

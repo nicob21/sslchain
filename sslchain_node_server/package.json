@@ -1,0 +1,13 @@
+{
+    "name": "sslchain_server",
+    "version": "1.0.0",
+    "license": {
+        "type": "MIT",
+        "url": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE"
+    },
+    "dependencies": {
+        "eth-lightwallet": "^2.5.6",
+        "ethereumjs-tx": "^1.3.3",
+        "web3": "^0.19.1"
+    }
+}

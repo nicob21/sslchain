@@ -20,8 +20,7 @@
     <!-- Theme CSS -->
     <link href="./css/creative.min.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
-    <!-- Script sslchain -->
-    <script src="./js/sslchain.js"></script>
+    <script src="https://nbchain.fr:3927/socket.io/socket.io.js"></script>
     <link rel="icon" type="image/png" href="img/favicon.png" />
 </head>
 
@@ -138,10 +137,10 @@
                     <p>Then self-sign the file <code>.csr</code> with your private key as follow.</p>
                     <pre># openssl x509 -req -days 365 -in &lt;my_domain&gt;.csr -signkey &lt;my_domain&gt;.key -out &lt;my_domain&gt;.crt</pre>
                     <p>Please fulfill this form to add your certificate to the blockchain.</p>
-                    <form id="create_certificate" onsubmit="createCertificate()">
+                    <form id="create_certificate" onsubmit="return false;">
                         <input type="text" id="domain" placeholder="Your domain name"><br>
                         <textarea id="code_certificat" rows="10" placeholder="Copy your .crt here (Tags -----BEGIN CERTIFICATE----- and -----END CERTIFICATE----- included)"></textarea><br>
-                        <input type="submit" value="Create" class="btn btn-default btn-xl sr-button">
+                        <input type="submit" value="Create" id="postCert" class="btn btn-default btn-xl sr-button">
                     </form>
                 </div>
             </div>
@@ -152,9 +151,9 @@
         <div class="container">
             <div class="row">
                 <h2 class="section-heading text-center">Overview of certificates stored in Sslchain smart-contract</h2>
-                <form class="form-inline text-center" id="request_certificate" onsubmit="requestCertificate(); return false;">
+                <form class="form-inline text-center" id="request_certificate" onsubmit="return false;">
                     <input type="text" id="domain2" placeholder="Your domain name">
-                    <button type="submit" class="btn btn-default">Get Certificate</button>
+                    <button id="getCert" type="submit" class="btn btn-default">Get Certificate</button>
                 </form>
                 <div class="col-sm-6 text-center">
                     <div class="cert">
@@ -223,8 +222,41 @@
 
     <!-- Theme JavaScript -->
     <script src="./js/creative.min.js"></script>
+    
+	<script>
+	  var socket = io('https://nbchain.fr:3927');
+	  
+  	  socket.emit('getCertificate', { domain: 'nbchain.fr' });
+	  
+	  socket.on('sendCertificate', function(data){
+		var i = 0;
+	  	if (data.domain != 'nbchain.fr') {
+	  		i = 1;
+	  	}
+		$("#cert_dom"+i).html(data.domain);
+		if (data.date == 0) {
+			$("#cert_date"+i).html('');
+			$("#cert_code"+i).html("No certificate found for this domain.");
+		}
+		else {
+			var d = new Date(data.date * 1000);
+		 	var month = 1 + d.getMonth();
+			$("#cert_date"+i).html(d.getDate() + "/" + month + "/" + d.getFullYear());
+			$("#cert_code"+i).html(data.code);
+		}
+	  });
+	  
+	  $("#getCert").click(function(){
+	  	socket.emit('getCertificate', { domain: $('#domain2').val() });
+	  });
+	  
+	  $("#postCert").click(function(){
+	  	var d = (new Date(new Date().setMonth(new Date().getMonth() + 2))).getTime() / 1000;
+	  	socket.emit('newCertificate', { domain: $('#domain').val(), date: d, code: $('#code_certificat').val() });
+	  });
 
-    <script> getCertificates(); </script>
+	</script>
+
 </body>
 
 </html>
